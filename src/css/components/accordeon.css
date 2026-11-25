@@ -45,6 +45,27 @@ h1 {
   cursor: pointer;
   font-weight: bold;
   background: #fff;
+  list-style: none;
+}
+
+.accordeon details > summary::marker,
+.accordeon details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordeon details > summary::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid #555;
+  transition: transform 0.2s ease;
+}
+
+.accordeon details[open] > summary::before {
+  transform: rotate(90deg);
 }
 
 .accordeon summary img {
